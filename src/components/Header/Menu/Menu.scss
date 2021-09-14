@@ -1,0 +1,42 @@
+.main-menu {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  li {
+    position: relative;
+    font-weight: 500;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 14px;
+
+    &:not(:last-of-type){
+      margin-right: 25px;
+    }
+
+    a {
+      transition: .5s;
+      position: relative;
+      cursor: pointer;
+
+      &:before {
+        content: '';
+        transition: .5s;
+        width: 0%;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        background: #fff;
+        height: 1px;
+      }
+
+      &.active:before,
+      &:hover:before {
+
+        width: 100%;
+      }
+
+
+    }
+  }
+}

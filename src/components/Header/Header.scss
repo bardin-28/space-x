@@ -1,0 +1,17 @@
+.header {
+  padding: 30px 0;
+  background: #010103;
+  color: #fff;
+
+  & > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  i {
+    font-size: 18px;
+  }
+
+}
+

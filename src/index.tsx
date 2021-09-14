@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './scenes/App/App';
 import {ApolloClient, ApolloProvider, InMemoryCache} from "@apollo/client";
+import { BrowserRouter as Router } from 'react-router-dom';
+import { MenuProvider } from 'MenuContext';
 
 const client = new ApolloClient({
     uri: 'https://api.spacex.land/graphql/',
@@ -10,7 +12,11 @@ const client = new ApolloClient({
 
 ReactDOM.render(
     <ApolloProvider client={client}>
-        <App />
+		<Router>
+			<MenuProvider>
+				<App />
+			</MenuProvider>
+		</Router>
     </ApolloProvider>
-  , document.getElementById('root')
+  , document.getElementById('main-body')
 );

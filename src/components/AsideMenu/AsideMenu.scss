@@ -1,0 +1,18 @@
+.aside-menu {
+  position: fixed;
+  right: 0;
+  top: 84px;
+  padding: 35px 0;
+  height: 100%;
+  background: #010103;
+  transition: .5s;
+  color: #fff;
+  font-weight: 500;
+  text-transform: uppercase;
+  width: 0;
+
+  &.active {
+    width: 200px;
+    padding: 35px;
+  }
+}

@@ -2,7 +2,7 @@ import React, {FC} from 'react';
 
 export const Preloader:FC = () => {
     return (
-        <div>
+        <div className="container">
             preloader...
         </div>
     );

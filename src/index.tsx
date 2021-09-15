@@ -18,5 +18,5 @@ ReactDOM.render(
 			</MenuProvider>
 		</Router>
     </ApolloProvider>
-  , document.getElementById('main-body')
+  , document.getElementById('main-wrapper')
 );

@@ -1,26 +1,27 @@
-import React, { useState, createContext } from "react";
+import React, { useState, FC } from "react";
 
-interface basicObj  {
-	active: boolean;
+interface MenuProviderContext {
+	activeMenu: boolean;
+	setMenuData?: any;
 }
 
-interface menuStage {
-	menuData: basicObj,
-	setMenuData: any
-}
+const defaultState = {
+	activeMenu: false,
+};
 
-const obj: basicObj	 = {
-	active: true,
-}
+export const MenuContext = React.createContext<MenuProviderContext>(defaultState);
 
-export const MenuContext = createContext<any>({});
-
-export const MenuProvider = (props: any) => {
-	const [menuData, setMenuData] = useState<basicObj>({active : false});
+export const MenuProvider: FC = ({ children }) => {
+	const [activeMenu, setMenuData] = useState(defaultState.activeMenu);
 
 	return (
-		<MenuContext.Provider value={{menuData, setMenuData}}>
-			{props.children}
+		<MenuContext.Provider
+			value={{
+				activeMenu,
+				setMenuData,
+			}}
+		>
+			{children}
 		</MenuContext.Provider>
 	);
 };
